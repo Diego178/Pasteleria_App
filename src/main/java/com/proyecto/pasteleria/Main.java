@@ -9,7 +9,7 @@ public class Main extends Application {
     @Override
     public void start(Stage stage){
         BorderPane root = new Login();
-        Scene scene = new Scene(root, 1200, 700);
+        Scene scene = new Scene(root, 900, 500);
         scene.getStylesheets().add(getClass().getResource("boton.css").toExternalForm());
         stage.setTitle("Login");
         stage.setScene(scene);

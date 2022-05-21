@@ -36,13 +36,17 @@
     -fx-effect: dropshadow( gaussian , rgba(255,255,255,0.5) , 0,0,0,1 );
 }
 
+.label-titulo {
+    -fx-font-size: 30px;
+    -fx-font-family: "Arial";
+    -fx-text-fill: #333333;
+    -fx-effect: dropshadow( gaussian , rgba(255,255,255,0.5) , 0,0,0,1 );
+}
+
 .text-field {
     -fx-font-size: 20px;
     -fx-background-color: #a9a9a9 , #ffcccc , #ffcccc;
     -fx-background-insets: 0 -1 -1 -1, 0 0 0 0, 0 -1 3 -1;
-    //-fx-background-color: #ffcccc ;
-    //-fx-background-insets: black ;
-    //-fx-background-radius: black ;
     -fx-font-family: "Arial";
 }
 .text-field:focused {
