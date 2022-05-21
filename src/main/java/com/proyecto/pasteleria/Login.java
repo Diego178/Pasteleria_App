@@ -4,6 +4,7 @@ package com.proyecto.pasteleria;
 //import com.jfoenix.controls.JFXTextField;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
@@ -16,7 +17,7 @@ import javafx.scene.shape.Circle;
 public class Login extends  BorderPane {
     GridPane formulario;
     TextField tUsuario;
-    TextField tContra;
+    PasswordField password;
     Button iniciar;
     Label lUsuario;
     Label lContra;
@@ -41,8 +42,8 @@ public class Login extends  BorderPane {
         tUsuario = new TextField();
         tUsuario.getStyleClass().add("text-field");
 
-        tContra = new TextField();
-        tContra.getStyleClass().add("text-field");
+        password = new PasswordField();
+        password.getStyleClass().add("text-field");
 
         lUsuario = new Label("Usuario: ");
         lUsuario.getStyleClass().add("label");
@@ -64,12 +65,24 @@ public class Login extends  BorderPane {
         formulario.add(lUsuario,3,20);
         formulario.add(tUsuario,4,20);
         formulario.add(lContra,3,30);
-        formulario.add(tContra,4,30);
+        formulario.add(password,4,30);
         formulario.add(iniciar,4,40);
+
+        iniciar.setOnMouseClicked(evtm->{
+            comprobar();
+        });
 
 
         this.setLeft(imagen);
         this.setCenter(formulario);
 
+    }
+
+    public void comprobar(){
+        String user = tUsuario.getText();
+        String pass = password.getText();
+        if(user.equals("admin") && pass.equals("password")){
+            System.out.println("Exito");
+        }
     }
 }
