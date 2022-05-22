@@ -1,6 +1,7 @@
 package com.proyecto.pasteleria;
 
 
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
@@ -8,21 +9,24 @@ import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.*;
-import javafx.scene.paint.ImagePattern;
-import javafx.scene.paint.Paint;
-import javafx.scene.shape.Circle;
+import javafx.stage.Stage;
+
+import static javafx.application.Platform.exit;
 
 
 public class Login extends  BorderPane {
     GridPane formulario;
+    BorderPane organizacion;
     TextField tUsuario;
     PasswordField password;
     Button iniciar;
     Label lUsuario;
     Label lContra;
-    Circle user;
+    Stage stage;
 
-    public Login() {
+    public Login(Stage stage) {
+        this.stage=stage;
+        organizacion = new BorderPane();
         formulario = new GridPane();
         iniciar=new Button("Iniciar sesion");
 
@@ -51,21 +55,31 @@ public class Login extends  BorderPane {
         lContra.getStyleClass().add("label");
 
         Image iUser = new Image("C:\\Users\\diego\\IdeaProjects\\Pasteleria\\src\\main\\resources\\com\\proyecto\\pasteleria\\User.png");
-        Paint iuser = new ImagePattern(iUser);
-         user= new Circle(70);
-         user.setFill(iuser);
+        ImageView iuser = new ImageView(iUser);
+        iuser.setFitWidth(150);
+        iuser.setFitHeight(150);
 
 
         formulario.setVgap(5);
         formulario.setHgap(5);
         formulario.getStyleClass().add("root");
 
-        formulario.add(user,4,10);
-        formulario.add(lUsuario,3,20);
-        formulario.add(tUsuario,4,20);
-        formulario.add(lContra,3,30);
-        formulario.add(password,4,30);
-        formulario.add(iniciar,4,40);
+        formulario.add(lUsuario,3,5);
+        formulario.add(tUsuario,4,5);
+        formulario.add(lContra,3,20);
+        formulario.add(password,4,20);
+        Label test = new Label();
+        test.setGraphic(iuser);
+        test.setPrefHeight(175);
+        organizacion.setTop(test);
+        test.setTranslateX(175);
+        test.setTranslateY(10);
+        iniciar.setTranslateX(155);
+        iniciar.setTranslateY(-70);
+
+
+        organizacion.setCenter(formulario);
+        organizacion.setBottom(iniciar);
 
         iniciar.setOnMouseClicked(evtm->{
             comprobar();
@@ -73,7 +87,7 @@ public class Login extends  BorderPane {
 
 
         this.setLeft(imagen);
-        this.setCenter(formulario);
+        this.setCenter(organizacion);
 
     }
 
@@ -81,6 +95,16 @@ public class Login extends  BorderPane {
         String user = tUsuario.getText();
         String pass = password.getText();
         if(user.equals("admin") && pass.equals("password")){
+            Stage stage1 = new Stage();
+            Pane menu = new Venta(stage1);
+            Scene scene = new Scene(menu, 900, 500);
+            scene.getStylesheets().add(getClass().getResource("boton.css").toExternalForm());
+            stage1.setTitle("Venta");
+            stage1.setScene(scene);
+            //stage.setResizable(false);
+            stage1.show();
+
+            stage.close();
             System.out.println("Exito");
         }
     }
