@@ -11,8 +11,6 @@ import javafx.scene.image.ImageView;
 import javafx.scene.layout.*;
 import javafx.stage.Stage;
 
-import static javafx.application.Platform.exit;
-
 
 public class Login extends  BorderPane {
     GridPane formulario;
@@ -96,7 +94,7 @@ public class Login extends  BorderPane {
         String pass = password.getText();
         if(user.equals("admin") && pass.equals("password")){
             Stage stage1 = new Stage();
-            Pane menu = new Venta(stage1);
+            Pane menu = new Menu(stage1);
             Scene scene = new Scene(menu, 900, 500);
             scene.getStylesheets().add(getClass().getResource("boton.css").toExternalForm());
             stage1.setTitle("Venta");
