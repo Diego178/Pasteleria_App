@@ -5,19 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4262c8d6-4ab3-4a67-9eef-ba091408d8c5" name="Changes" comment="First version">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/proyecto/pasteleria/AgregarPastel.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/proyecto/pasteleria/Menu.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/proyecto/pasteleria/AgregarPastel.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/proyecto/pasteleria/AgregarPedido.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/proyecto/pasteleria/Grafica.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/proyecto/pasteleria/PedidoPendiente.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/proyecto/pasteleria/Salir.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/proyecto/pasteleria/Venta.jpeg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Pasteleria/com/proyecto/pasteleria/Login.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Pasteleria/com/proyecto/pasteleria/Login.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Pasteleria/com/proyecto/pasteleria/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Pasteleria/com/proyecto/pasteleria/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/proyecto/pasteleria/Login.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/proyecto/pasteleria/Login.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/proyecto/pasteleria/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/proyecto/pasteleria/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Pasteleria/com/proyecto/pasteleria/Menu.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Pasteleria/com/proyecto/pasteleria/Menu.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/proyecto/pasteleria/AgregarPastel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/proyecto/pasteleria/AgregarPastel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/proyecto/pasteleria/Menu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/proyecto/pasteleria/Menu.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/proyecto/pasteleria/boton.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/proyecto/pasteleria/boton.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -112,7 +104,7 @@
       <workItem from="1653091978808" duration="17355000" />
       <workItem from="1653169477214" duration="6542000" />
       <workItem from="1653445453843" duration="2829000" />
-      <workItem from="1653713598154" duration="5829000" />
+      <workItem from="1653713598154" duration="7469000" />
     </task>
     <task id="LOCAL-00001" summary="First version">
       <created>1652590997365</created>
@@ -205,7 +197,21 @@
       <option name="project" value="LOCAL" />
       <updated>1653269610804</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="First version">
+      <created>1653867392316</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1653867392316</updated>
+    </task>
+    <task id="LOCAL-00015" summary="First version">
+      <created>1653867403963</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1653867403963</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

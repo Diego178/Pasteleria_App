@@ -2,11 +2,13 @@ package com.proyecto.pasteleria;
 
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.GridPane;
+import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 
 public class Menu extends BorderPane {
@@ -15,9 +17,9 @@ public class Menu extends BorderPane {
 
     public Menu(Stage stage){
         titulo = new Label("Bienvenido");
-        titulo.getStyleClass().add("label-titulo");
-        titulo.setLayoutX(450);
-        titulo.setLayoutY(25);
+        titulo.getStyleClass().add("label-titulo-Grande");
+        titulo.setLayoutX(430);
+        titulo.setLayoutY(40);
 
         menu = new GridPane();
 
@@ -30,6 +32,7 @@ public class Menu extends BorderPane {
         butGrafica.setGraphic(new ImageView("C:\\Users\\diego\\IdeaProjects\\Pasteleria\\src\\main\\resources\\com\\proyecto\\pasteleria\\Grafica.jpeg"));
         butGrafica.setLayoutX(50);
         butGrafica.setLayoutY(100);
+        butGrafica.getStyleClass().add("cssBoton");
         lb1 = new Label("Graficas");
 
 //2
@@ -41,6 +44,7 @@ public class Menu extends BorderPane {
         butVenta.setMaxSize(2,2);
         butVenta.setLayoutX(300);
         butVenta.setLayoutY(100);
+        butVenta.getStyleClass().add("cssBoton");
         lb2 = new Label("Ventas");
 //3
         Button butPedido = new Button();
@@ -51,17 +55,26 @@ public class Menu extends BorderPane {
         butPedido.setMaxSize(2,2);
         butPedido.setLayoutX(620);
         butPedido.setLayoutY(100);
+        butPedido.getStyleClass().add("cssBoton");
         lb3 = new Label("Agregar pedido");
 //4
         Button butAgregar = new Button();
         butAgregar.setOnAction(e -> {
-            System.out.println("OK clicked4.");
+            Stage stage1 = new Stage();
+            Pane menu = new AgregarPastel(stage1);
+            Scene scene = new Scene(menu, 700, 500);
+            scene.getStylesheets().add(getClass().getResource("boton.css").toExternalForm());
+            stage1.setTitle("Agregar Pastel");
+            stage1.setScene(scene);
+            //stage.setResizable(false);
+            stage1.show();
         });
         butAgregar.setGraphic(new ImageView("C:\\Users\\diego\\IdeaProjects\\Pasteleria\\src\\main\\resources\\com\\proyecto\\pasteleria\\AgregarPastel.jpeg"));
         butAgregar.setMaxSize(2,2);
         //button1.setMinSize(5,5);
         butAgregar.setLayoutX(50);
         butAgregar.setLayoutY(300);
+        butAgregar.getStyleClass().add("cssBoton");
         lb4 = new Label("Agregar pasteles");
 //5
         Button butPendiente = new Button();
@@ -73,6 +86,7 @@ public class Menu extends BorderPane {
         //button1.setMinSize(5,5);
         butPendiente.setLayoutX(300);
         butPendiente.setLayoutY(300);
+        butPendiente.getStyleClass().add("cssBoton");
         lb5 = new Label("Pedidos pendientes");
 //6
         Button butSalir = new Button();
@@ -84,6 +98,7 @@ public class Menu extends BorderPane {
         //button6.setMinSize(5,5);
         butSalir.setLayoutX(620);
         butSalir.setLayoutY(300);
+        butSalir.getStyleClass().add("cssBoton");
         lb6 = new Label("Salir");
 
         menu.add(butGrafica,  1, 1);
