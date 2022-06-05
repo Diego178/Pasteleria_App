@@ -52,7 +52,8 @@ public class Login extends  BorderPane {
         lContra = new Label("Contraseña: ");
         lContra.getStyleClass().add("label");
 
-        Image iUser = new Image("C:\\Users\\diego\\IdeaProjects\\Pasteleria\\src\\main\\resources\\com\\proyecto\\pasteleria\\User.png");
+        //Image iUser = new Image("C:\\Users\\diego\\IdeaProjects\\Pasteleria\\src\\main\\resources\\com\\proyecto\\pasteleria\\User.png");
+        Image iUser = new Image(getClass().getResourceAsStream("User.png"));
         ImageView iuser = new ImageView(iUser);
         iuser.setFitWidth(150);
         iuser.setFitHeight(150);
