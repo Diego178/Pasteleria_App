@@ -13,7 +13,7 @@ public class AgregarPastel extends GridPane {
     Button bAgregar;
     ComboBox<String> cbTamano;
     ComboBox<String>  cbRelleno;
-    ComboBox cbTipo;
+    ComboBox<ImageView> cbTipoPan;
     ColorPicker color;
     TextField tDetalles;
     Label lAgregar;
@@ -26,9 +26,9 @@ public class AgregarPastel extends GridPane {
     Stage stage1;
     public AgregarPastel(Stage stage){
         this.stage1=stage;
-        lTipo=new Label("Tipo de pastel: ");
-        cbTipo=new ComboBox();
-        //crearListaImagenes(cbTipo);
+        lTipo=new Label("Tipo de Pan: ");
+        cbTipoPan=new ComboBox();
+        crearListaImagenesTipoPan(cbTipoPan);
 
         lColor=new Label("Color del pastel:");
 
@@ -38,21 +38,21 @@ public class AgregarPastel extends GridPane {
 
         lDetalles=new Label("Detalles: ");
 
-        this.add(cbTipo,0,0);
+        this.add(cbTipoPan,0,0);
 
 
     }
 
-    /*private void crearListaImagenes(ComboBox imagenesPastel) {
-        String []nombrePasteles = {"pastel1.jpg","pastel2.jpg"};
-        ImageView []imagenes = new ImageView[nombrePasteles.length];
+    private void crearListaImagenesTipoPan(ComboBox imagenesPastel) {
+        String []nombrePanes = {"cajeta.jpeg","Moka.jpeg","Oreo.jpeg","quesoCrema.jpeg","Zarzamora.jpeg"};
+        ImageView []imagenes = new ImageView[nombrePanes.length];
 
         int i=0;
-        for(String nombrePastel : nombrePasteles) {
-            Image imagenC = new Image(getClass().getResourceAsStream(nombrePastel));
-            imagenes[i] = new ImageView(imagenC);
-            imagenes[i].setFitHeight(50);
-            imagenes[i].setFitWidth((double)imagenC.getWidth()/(double)imagenC.getHeight()*50.0);
+        for(String nombrePan : nombrePanes) {
+            Image imagenPan = new Image(getClass().getResourceAsStream(nombrePan));
+            imagenes[i] = new ImageView(imagenPan);
+            imagenes[i].setFitHeight(17);
+            imagenes[i].setFitWidth(70);
             i++;
         }
         imagenesPastel.getItems().addAll(imagenes);
@@ -61,7 +61,7 @@ public class AgregarPastel extends GridPane {
                 return new ListCell<ImageView>() {
                     private Rectangle rectangulo; {
                         setContentDisplay(ContentDisplay.GRAPHIC_ONLY);
-                        rectangulo = new Rectangle(200, 50);
+                        rectangulo = new Rectangle(80, 22);
                     }
                     @Override
                     public void updateItem(ImageView item, boolean vacio) {
@@ -77,5 +77,9 @@ public class AgregarPastel extends GridPane {
             }
         });
 
-    }*/
+    }
+
+
+
+
 }
