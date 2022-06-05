@@ -1,10 +1,12 @@
-package com.proyecto.pasteleria;
+package com.proyecto.pasteleria.Menu;
 
+import com.proyecto.pasteleria.AgregarPastel.AgregarPastel;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.GridPane;
@@ -29,7 +31,8 @@ public class Menu extends BorderPane {
         butGrafica.setOnAction(e -> {
             System.out.println("OK clicked1.");
         });
-        butGrafica.setGraphic(new ImageView("C:\\Users\\diego\\IdeaProjects\\Pasteleria\\src\\main\\resources\\com\\proyecto\\pasteleria\\Grafica.jpeg"));
+        Image igrafica = new Image(getClass().getResourceAsStream("Grafica.jpeg"));
+        butGrafica.setGraphic(new ImageView(igrafica));
         butGrafica.setLayoutX(50);
         butGrafica.setLayoutY(100);
         butGrafica.getStyleClass().add("cssBoton");
@@ -40,7 +43,8 @@ public class Menu extends BorderPane {
         butVenta.setOnAction(e -> {
             System.out.println("OK clicked2.");
         });
-        butVenta.setGraphic(new ImageView("C:\\Users\\diego\\IdeaProjects\\Pasteleria\\src\\main\\resources\\com\\proyecto\\pasteleria\\Venta.jpeg"));
+        Image inuevaVenta = new Image(getClass().getResourceAsStream("Venta.jpeg"));
+        butVenta.setGraphic(new ImageView(inuevaVenta));
         butVenta.setMaxSize(2,2);
         butVenta.setLayoutX(300);
         butVenta.setLayoutY(100);
@@ -51,7 +55,8 @@ public class Menu extends BorderPane {
         butPedido.setOnAction(e -> {
             System.out.println("OK clicked3.");
         });
-       butPedido.setGraphic(new ImageView("C:\\Users\\diego\\IdeaProjects\\Pasteleria\\src\\main\\resources\\com\\proyecto\\pasteleria\\AgregarPedido.jpeg"));
+        Image iagregarPedido = new Image(getClass().getResourceAsStream("AgregarPedido.jpeg"));
+       butPedido.setGraphic(new ImageView(iagregarPedido));
         butPedido.setMaxSize(2,2);
         butPedido.setLayoutX(620);
         butPedido.setLayoutY(100);
@@ -63,13 +68,14 @@ public class Menu extends BorderPane {
             Stage stage1 = new Stage();
             Pane menu = new AgregarPastel(stage1);
             Scene scene = new Scene(menu, 700, 500);
-            scene.getStylesheets().add(getClass().getResource("boton.css").toExternalForm());
+            scene.getStylesheets().add(getClass().getResource("boton1.css").toExternalForm());
             stage1.setTitle("Agregar Pastel");
             stage1.setScene(scene);
             //stage.setResizable(false);
             stage1.show();
         });
-        butAgregar.setGraphic(new ImageView("C:\\Users\\diego\\IdeaProjects\\Pasteleria\\src\\main\\resources\\com\\proyecto\\pasteleria\\AgregarPastel.jpeg"));
+        Image iagregarPastel = new Image(getClass().getResourceAsStream("AgregarPastel.jpeg"));
+        butAgregar.setGraphic(new ImageView(iagregarPastel));
         butAgregar.setMaxSize(2,2);
         //button1.setMinSize(5,5);
         butAgregar.setLayoutX(50);
@@ -81,7 +87,8 @@ public class Menu extends BorderPane {
         butPendiente.setOnAction(e -> {
             System.out.println("OK clicked5.");
         });
-        butPendiente.setGraphic(new ImageView("C:\\Users\\diego\\IdeaProjects\\Pasteleria\\src\\main\\resources\\com\\proyecto\\pasteleria\\PedidoPendiente.jpeg"));
+        Image ipedidoPendiente = new Image(getClass().getResourceAsStream("PedidoPendiente.jpeg"));
+        butPendiente.setGraphic(new ImageView(ipedidoPendiente));
         butPendiente.setMaxSize(2,2);
         //button1.setMinSize(5,5);
         butPendiente.setLayoutX(300);
@@ -93,7 +100,8 @@ public class Menu extends BorderPane {
         butSalir.setOnAction(e -> {
             stage.close();
         });
-       butSalir.setGraphic(new ImageView("C:\\Users\\diego\\IdeaProjects\\Pasteleria\\src\\main\\resources\\com\\proyecto\\pasteleria\\Salir.jpeg"));
+        Image isalir = new Image(getClass().getResourceAsStream("Salir.jpeg"));
+       butSalir.setGraphic(new ImageView(isalir));
         butSalir.setMaxSize(5,5);
         //button6.setMinSize(5,5);
         butSalir.setLayoutX(620);

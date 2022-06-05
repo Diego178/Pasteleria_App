@@ -1,6 +1,8 @@
-package com.proyecto.pasteleria;
+package com.proyecto.pasteleria.Login;
 
 
+import com.proyecto.pasteleria.Menu.Menu;
+import javafx.geometry.Rectangle2D;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
@@ -9,7 +11,12 @@ import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.*;
+import javafx.stage.Screen;
 import javafx.stage.Stage;
+
+
+
+
 
 
 public class Login extends  BorderPane {
@@ -96,8 +103,9 @@ public class Login extends  BorderPane {
         if(user.equals("admin") && pass.equals("password")){
             Stage stage1 = new Stage();
             Pane menu = new Menu(stage1);
-            Scene scene = new Scene(menu, 900, 500);
-            scene.getStylesheets().add(getClass().getResource("boton.css").toExternalForm());
+            Rectangle2D screenBounds = Screen.getPrimary().getBounds();
+            Scene scene = new Scene(menu, screenBounds.getWidth(), screenBounds.getHeight());
+            scene.getStylesheets().add(getClass().getResource("boton1.css").toExternalForm());
             stage1.setTitle("Venta");
             stage1.setScene(scene);
             //stage.setResizable(false);

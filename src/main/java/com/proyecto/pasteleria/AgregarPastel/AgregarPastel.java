@@ -1,4 +1,4 @@
-package com.proyecto.pasteleria;
+package com.proyecto.pasteleria.AgregarPastel;
 
 import javafx.scene.control.*;
 import javafx.scene.image.Image;

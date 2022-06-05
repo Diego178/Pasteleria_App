@@ -1,4 +1,4 @@
-package com.proyecto.pasteleria;
+package com.proyecto.pasteleria.Venta;
 
 import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;

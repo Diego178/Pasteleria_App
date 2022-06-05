@@ -13,4 +13,12 @@ module com.proyecto.pasteleria {
 
     opens com.proyecto.pasteleria to javafx.fxml;
     exports com.proyecto.pasteleria;
+    exports com.proyecto.pasteleria.Login;
+    opens com.proyecto.pasteleria.Login to javafx.fxml;
+    exports com.proyecto.pasteleria.Menu;
+    opens com.proyecto.pasteleria.Menu to javafx.fxml;
+    exports com.proyecto.pasteleria.AgregarPastel;
+    opens com.proyecto.pasteleria.AgregarPastel to javafx.fxml;
+    exports com.proyecto.pasteleria.Venta;
+    opens com.proyecto.pasteleria.Venta to javafx.fxml;
 }

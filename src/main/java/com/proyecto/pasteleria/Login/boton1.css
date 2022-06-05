@@ -1,0 +1,62 @@
+
+.root {
+    -fx-background-color: #ffcccc;
+}
+
+.cssBoton {
+    -fx-border-color: #706fd3;
+    -fx-border-width: 2px;
+    -fx-background-color: #ffffff;
+    -fx-font-size: 20px;
+    -fx-font-color: #2C3A47;
+    -fx-font-family: "Arial";
+    -fx-text-fill:black;
+    -fx-background-radius: 10 10 10 10;
+    -fx-border-radius: 10 10 10 10;
+}
+.cssBoton:hover {
+    -fx-border-color: #706fd3;
+    -fx-border-width: 3px;
+    -fx-background-color: #f1f2f6;
+    -fx-font-size: 20px;
+    -fx-font-family: "Arial";
+    -fx-background-radius: 10 10 10 10;
+    -fx-border-radius: 10 10 10 10;
+}
+
+.cssBoton:pressed {
+    -fx-text-fill:grey;
+    -fx-background-color: #FFFFFF;
+}
+
+.label {
+    -fx-font-size: 20px;
+    -fx-font-family: "Arial";
+    -fx-text-fill: #333333;
+    -fx-effect: dropshadow( gaussian , rgba(255,255,255,0.5) , 0,0,0,1 );
+}
+
+.label-titulo {
+    -fx-font-size: 30px;
+    -fx-font-family: "Arial";
+    -fx-text-fill: #333333;
+    -fx-effect: dropshadow( gaussian , rgba(255,255,255,0.5) , 0,0,0,1 );
+}
+
+.label-titulo-Grande {
+    -fx-font-size: 60px;
+    -fx-font-family: "Arial";
+    -fx-text-fill: #333333;
+    -fx-effect: dropshadow( gaussian , rgba(255,255,255,0.5) , 0,0,0,1 );
+}
+
+.text-field {
+    -fx-font-size: 20px;
+    -fx-background-color: #a9a9a9 , #ffcccc , #ffcccc;
+    -fx-background-insets: 0 -1 -1 -1, 0 0 0 0, 0 -1 3 -1;
+    -fx-font-family: "Arial";
+}
+.text-field:focused {
+    -fx-background-color: #a9a9a9 , #ffcccc , #ffcccc;
+    -fx-background-insets: 0 -1 -1 -1, 0 0 0 0, 0 -1 3 -1;
+}
