@@ -49,9 +49,11 @@ public class Login extends  BorderPane {
 
         tUsuario = new TextField();
         tUsuario.getStyleClass().add("text-field");
+        tUsuario.setPromptText("Ingresa el usuario");
 
         password = new PasswordField();
         password.getStyleClass().add("text-field");
+        password.setPromptText("Ingresa la contraseña");
 
         lUsuario = new Label("Usuario: ");
         lUsuario.getStyleClass().add("label");

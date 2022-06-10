@@ -5,6 +5,7 @@ import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.ColorPicker;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
@@ -37,8 +38,8 @@ public class Menu extends BorderPane {
         butGrafica.setLayoutY(100);
         butGrafica.getStyleClass().add("cssBoton");
         lb1 = new Label("Graficas");
-
 //2
+
         Button butVenta = new Button();
         butVenta.setOnAction(e -> {
             System.out.println("OK clicked2.");
