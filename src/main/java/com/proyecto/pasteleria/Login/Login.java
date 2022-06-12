@@ -93,6 +93,10 @@ public class Login extends  BorderPane {
             comprobar();
         });
 
+        password.setOnAction(evt->{
+            comprobar();
+        });
+
 
         this.setLeft(imagen);
         this.setCenter(organizacion);

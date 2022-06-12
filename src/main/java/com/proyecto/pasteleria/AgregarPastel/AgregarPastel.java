@@ -44,6 +44,7 @@ public class AgregarPastel extends GridPane {
         cbTipoPan=new ComboBox();
         crearListaTipoPan(cbTipoPan);
         cbTipoPan.setPrefHeight(30);
+        cbTipoPan.setPrefWidth(200);
         cbTipoPan.getStyleClass().add("combo-box-base");
         cbTipoPan.setOnAction(evt->{
             accionCBTipoPan();
@@ -52,10 +53,12 @@ public class AgregarPastel extends GridPane {
         lColor=new Label("Color del pastel:");
         color=new ColorPicker();
         color.setPrefHeight(39);
+        color.setPrefWidth(200);
 
         lRelleno=new Label("Relleno del partel: ");
         cbRelleno=new ComboBox();
         cbRelleno.setPrefHeight(35);
+        cbRelleno.setPrefWidth(200);
         crearListaRelleno(cbRelleno);
         cbRelleno.setOnAction(evt->{
             accionCBRelleno();
@@ -64,6 +67,7 @@ public class AgregarPastel extends GridPane {
         lNoPisos=new Label("Numero de pisos: ");
         cbNoPisos=new ComboBox();
         cbNoPisos.setPrefHeight(35);
+        cbNoPisos.setPrefWidth(200);
         crearListaNoPisos(cbNoPisos);
         cbNoPisos.setOnAction(evt->{
             accionCBNoPisos();
@@ -72,10 +76,12 @@ public class AgregarPastel extends GridPane {
         lForma = new Label("Forma del pastel: ");
         cbForma=new ComboBox();
         cbForma.setPrefHeight(35);
+        cbForma.setPrefWidth(200);
         crearListaFromas(cbForma);
 
         lTamano=new Label("Selecciona el tamaño: ");
         cbTamano=new ComboBox();
+        cbTamano.setPrefWidth(200);
         crearListaTamanos(cbTamano);
 
         lDetalles=new Label("Detalles del pastel: ");
