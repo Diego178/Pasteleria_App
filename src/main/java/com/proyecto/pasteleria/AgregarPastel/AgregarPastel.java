@@ -1,5 +1,7 @@
 package com.proyecto.pasteleria.AgregarPastel;
 
+import com.proyecto.pasteleria.Modelos.Pastel;
+import com.proyecto.pasteleria.Pedidos.TablaPedidos;
 import javafx.geometry.Pos;
 import javafx.scene.control.*;
 import javafx.scene.image.Image;
@@ -21,7 +23,7 @@ public class AgregarPastel extends GridPane {
     private ComboBox<String>  cbRelleno;
     private ComboBox<String> cbTipoPan;
     private ComboBox<String> cbForma;
-    private ComboBox<String> cbNoPisos;
+    private ComboBox<Integer> cbNoPisos;
     private ColorPicker color;
     private TextArea tDetalles;
     private Label Precio;
@@ -36,8 +38,9 @@ public class AgregarPastel extends GridPane {
     private ImageView imagenesPastel;
     private Stage stage1;
     private Button bAgregar;
-    public AgregarPastel(Stage stage){
+    public AgregarPastel(Stage stage, TablaPedidos tablaPasteles,Label total){
         this.setStyle("-fx-background-color: #dfe6e9");
+
         this.stage1=stage;
 
         lTipo=new Label("Tipo de Pan: ");
@@ -73,6 +76,8 @@ public class AgregarPastel extends GridPane {
             accionCBNoPisos();
         });
 
+
+
         lForma = new Label("Forma del pastel: ");
         cbForma=new ComboBox();
         cbForma.setPrefHeight(35);
@@ -93,6 +98,12 @@ public class AgregarPastel extends GridPane {
         Precio=new Label("Precio del pastel: $"+precioPastel);
 
         bAgregar=new Button("Agregar");
+        bAgregar.setOnAction(evtm->{
+            Pastel pastel=crearPastel();
+            tablaPasteles.agregarPastel(pastel);
+            total.setText("Total: "+tablaPasteles.total());
+            stage.close();
+        });
         //setPromptText
         this.add(lTipo,3,0);
         this.add(cbTipoPan,4,0);
@@ -172,8 +183,8 @@ public class AgregarPastel extends GridPane {
         Precio.setText("Precio del pastel: $"+precioPastel);
     }
 
-    private void crearListaNoPisos(ComboBox<String> cbNoPisos) {
-        cbNoPisos.getItems().addAll("1","2","3","4","5");
+    private void crearListaNoPisos(ComboBox<Integer> cbNoPisos) {
+        cbNoPisos.getItems().addAll(1,2,3,4,5);
     }
 
     private void crearListaRelleno(ComboBox cbRelleno) {
@@ -222,5 +233,14 @@ public class AgregarPastel extends GridPane {
 
     private void crearListaTamanos(ComboBox<String> cbTamano) {
         cbTamano.getItems().addAll("Chico","Mediano","Grande");
+    }
+    public Pastel crearPastel(){
+        String forma;
+        if(cbForma.getSelectionModel().getSelectedIndex()==0)
+            forma="cuadrado";
+        else
+            forma="circulo";
+        return new Pastel(1, cbTipoPan.getValue(), cbRelleno.getValue(), color.getValue().toString(), forma, cbNoPisos.getValue(), cbTamano.getValue(), precioPastel, tDetalles.getText());
+
     }
 }

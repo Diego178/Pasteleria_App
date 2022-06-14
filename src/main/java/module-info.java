@@ -3,6 +3,8 @@ module com.proyecto.pasteleria {
     requires javafx.fxml;
     requires javafx.web;
     requires java.sql;
+    requires javafx.graphics;
+    requires javafx.base;
 
     /*requires org.controlsfx.controls;
     requires com.dlsc.formsfx;
@@ -12,6 +14,7 @@ module com.proyecto.pasteleria {
     requires eu.hansolo.tilesfx;
     requires com.almasb.fxgl.all;*/
 
+    opens com.proyecto.pasteleria.Modelos to javafx.base;
     opens com.proyecto.pasteleria to javafx.fxml;
     exports com.proyecto.pasteleria;
     exports com.proyecto.pasteleria.Login;
@@ -26,4 +29,5 @@ module com.proyecto.pasteleria {
     opens com.proyecto.pasteleria.AgregarDireccion to javafx.fxml;
     exports com.proyecto.pasteleria.Conexion;
     opens com.proyecto.pasteleria.Conexion to javafx.fxml;
+
 }

@@ -65,16 +65,16 @@ public class Menu extends BorderPane {
         lb3 = new Label("Agregar pedido");
 //4
         Button butAgregar = new Button();
-        butAgregar.setOnAction(e -> {
+        /*butAgregar.setOnAction(e -> {
             Stage stage1 = new Stage();
-            Pane menu = new AgregarPastel(stage1);
+            Pane menu = new AgregarPastel(stage1,);
             Scene scene = new Scene(menu, 700, 500);
             scene.getStylesheets().add(getClass().getResource("boton1.css").toExternalForm());
             stage1.setTitle("Agregar Pastel");
             stage1.setScene(scene);
             //stage.setResizable(false);
             stage1.show();
-        });
+        });*/
         Image iagregarPastel = new Image(getClass().getResourceAsStream("AgregarPastel.jpeg"));
         butAgregar.setGraphic(new ImageView(iagregarPastel));
         butAgregar.setMaxSize(2,2);

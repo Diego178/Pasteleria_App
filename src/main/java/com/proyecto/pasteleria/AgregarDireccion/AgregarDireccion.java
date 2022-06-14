@@ -1,6 +1,7 @@
 package com.proyecto.pasteleria.AgregarDireccion;
 
 import com.proyecto.pasteleria.Conexion.ConexionDireccion;
+import com.proyecto.pasteleria.Modelos.Direccion;
 import javafx.geometry.Pos;
 import javafx.scene.control.*;
 import javafx.scene.layout.GridPane;
@@ -29,7 +30,9 @@ public class AgregarDireccion extends GridPane {
     private  int IDCiudad;
     private  int IDColonia;
     private Button agregar;
-    public AgregarDireccion(Stage stage){
+    private Direcciones direcciones;
+    public AgregarDireccion(Stage stage,Direcciones direcciones){
+        this.direcciones=direcciones;
         this.stage=stage;
         setStyle("-fx-background-color: #dfe6e9");
         conexion=new ConexionDireccion();
@@ -97,9 +100,9 @@ public class AgregarDireccion extends GridPane {
 
         agregar=new Button("Agregar");
         agregar.setOnAction(evt->{
-
+            Direccion direccion=crearDireccion();
+            direcciones.agregarDireccion(direccion);
         });
-
         setHgap(7);
         setVgap(7);
         setAlignment(Pos.CENTER);
@@ -115,6 +118,12 @@ public class AgregarDireccion extends GridPane {
         add(tNoCasa,3,8);
         add(lDescripcion,2,10);
         add(tDetalles,3,10);
+        add(agregar,3,11);
+    }
+
+    private Direccion crearDireccion() {
+        int Nocasa=Integer.parseInt(tNoCasa.getText());
+        return new Direccion(cbEstado.getValue(),cbCiudad.getValue(),cbColonia.getValue(),tCalle.getText(),Nocasa,tDetalles.getText());
     }
 
     private void accionCBCiudad() {
