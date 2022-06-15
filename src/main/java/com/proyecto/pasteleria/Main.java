@@ -1,7 +1,9 @@
 package com.proyecto.pasteleria;
 
 import com.proyecto.pasteleria.Login.Login;
+import com.proyecto.pasteleria.PantallaAgregarPastel.PantallaAgregarPastel;
 import com.proyecto.pasteleria.Pedidos.PantallaPedidos;
+import com.proyecto.pasteleria.Venta.Venta;
 import javafx.application.Application;
 import javafx.scene.Scene;
 import javafx.scene.layout.Pane;
@@ -12,8 +14,9 @@ public class Main extends Application {
     public void start(Stage stage){
         Pane root = new Login(stage);
         //Scene scene = new Scene(root, 900, 500);
-        Pane menu = new PantallaPedidos();
-        Scene scene = new Scene(menu, 1200, 700);
+        Stage stage1 = new Stage();
+        Pane menu = new PantallaAgregarPastel(stage1);
+        Scene scene = new Scene(menu, 1000, 700);
         scene.getStylesheets().add(getClass().getResource("styles.css").toExternalForm());
         stage.setTitle("Login");
         stage.setScene(scene);

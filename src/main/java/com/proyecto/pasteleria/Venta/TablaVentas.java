@@ -1,4 +1,4 @@
-package com.proyecto.pasteleria.Pedidos;
+package com.proyecto.pasteleria.Venta;
 
 import com.proyecto.pasteleria.Modelos.Pastel;
 import javafx.collections.FXCollections;
@@ -7,10 +7,10 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 
-public class TablaPedidos {
+public class TablaVentas {
     private TableView tablaPasteles;
     private ObservableList<Pastel> pasteles= FXCollections.observableArrayList();
-    public TablaPedidos(){
+    public TablaVentas(){
         tablaPasteles=new TableView<>();
         tablaPasteles.getStyleClass().add("table-cell");
         tablaPasteles.setPrefWidth(700);
@@ -23,8 +23,6 @@ public class TablaPedidos {
         TableColumn<Pastel, String> colTamano = new TableColumn<Pastel,String>("Tamaño");
         TableColumn<Pastel, String> colRelleno = new TableColumn<Pastel,String>("Relleno");
         TableColumn<Pastel, String> colPrecio = new TableColumn<Pastel,String>("Precio");
-        //TableColumn<Pastel, String> colEliminar = new TableColumn<Pastel,String>("Eliminar");
-        //TableColumn<Pastel, String> colModificar = new TableColumn<Pastel,String>("Modificar");
 
         colTipoPan.setPrefWidth(120);
         colTamano.setPrefWidth(120);
@@ -36,8 +34,6 @@ public class TablaPedidos {
         colTamano.setCellValueFactory(new PropertyValueFactory<Pastel, String>("tamano"));
         colRelleno.setCellValueFactory(new PropertyValueFactory<Pastel,String>("relleno"));
         colPrecio.setCellValueFactory(new PropertyValueFactory<Pastel,String>("precio"));
-        //colEliminar.setCellValueFactory(new PropertyValueFactory<Pastel,String>("eliminar"));
-        //colModificar.setCellValueFactory(new PropertyValueFactory<Pastel,String>("modificar"));
 
         tablaPasteles.getColumns().addAll(colTipoPan,colTamano,colRelleno,
                 colPrecio);

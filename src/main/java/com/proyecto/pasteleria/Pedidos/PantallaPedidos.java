@@ -4,7 +4,7 @@ package com.proyecto.pasteleria.Pedidos;
 import com.proyecto.pasteleria.AgregarDireccion.AgregarDireccion;
 import com.proyecto.pasteleria.AgregarDireccion.Direcciones;
 import com.proyecto.pasteleria.AgregarPastel.AgregarPastel;
-import com.proyecto.pasteleria.Modelos.Direccion;
+import com.proyecto.pasteleria.AgregarPastel.TablaPasteles;
 import com.proyecto.pasteleria.Modelos.Pastel;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -34,11 +34,10 @@ public class PantallaPedidos extends BorderPane {
     private Label lTotal;
     private TextField tTelefono;
     private TextField tNombre;
-    private TablaPedidos tablaPasteles;
+    private TablaPasteles tablaPasteles;
     private ObservableList<Pastel> pasteles;
     public int total;
     private Direcciones direcciones;
-    private int numeroDirecciones;
     public PantallaPedidos(){
         inicializarComponentes();
     }
@@ -51,7 +50,7 @@ public class PantallaPedidos extends BorderPane {
         titulo.getStyleClass().add("label-titulo-Grande");
 
         pasteles= FXCollections.observableArrayList();
-        tablaPasteles=new TablaPedidos();;
+        tablaPasteles=new TablaPasteles();;
         TableView tablaPasteles1=tablaPasteles.getTablaPasteles();
 
         direcciones=new Direcciones();
@@ -67,21 +66,16 @@ public class PantallaPedidos extends BorderPane {
         bAgregarDireccion1=new Button("Direccion cliente");
         bAgregarDireccion1.getStyleClass().add("cssBoton");
         bAgregarDireccion1.setOnAction(evt->{
-            numeroDirecciones=direcciones.numeroDirecciones();
-            accionAgregarDireccion();
-            if(numeroDirecciones>0) {
-                bAgregarDireccion1.setDisable(true);
-                bAgregarDireccion2.setDisable(false);
-            }
+            accionAgregarDireccion(0);
+
         });
         lAgregarDireccion2=new Label("Direccion de entrega:");
         bAgregarDireccion2=new Button("Direccion entrega");
         bAgregarDireccion2.getStyleClass().add("cssBoton");
-        bAgregarDireccion2.setDisable(true);
         bAgregarDireccion2.setOnAction(evt->{
-            direcciones.mostrarDirecciones();
-            accionAgregarDireccion();
+            accionAgregarDireccion(1);
         });
+
 
         lTelefonoCliente=new Label("Telefono del cliente: ");
         tTelefono=new TextField();
@@ -96,7 +90,8 @@ public class PantallaPedidos extends BorderPane {
         bRealizarPedido=new Button("Realizar pedido");
         bRealizarPedido.getStyleClass().add("cssBoton");
 
-        lTotal=new Label("Total: "+total);
+        lTotal=new Label("Total: $"+total);
+        lTotal.getStyleClass().add("label-titulo-Grande");
 
 
         formulario.setStyle("-fx-background-color: #dfe6e9");
@@ -115,6 +110,8 @@ public class PantallaPedidos extends BorderPane {
         formulario.add(tNombre,1,7);
 
         barra.setPrefHeight(80);
+        barra.setSpacing(600);
+        barra.alignmentProperty().set(Pos.CENTER);
         barra.getChildren().addAll(lTotal,bRealizarPedido);
 
         setRight(formulario);
@@ -124,9 +121,9 @@ public class PantallaPedidos extends BorderPane {
         setAlignment(titulo,Pos.CENTER);
     }
 
-    private void accionAgregarDireccion() {
+    private void accionAgregarDireccion(int Nodireccion) {
         Stage stage=new Stage();
-        Pane menu = new AgregarDireccion(stage, direcciones);
+        Pane menu = new AgregarDireccion(stage, direcciones,Nodireccion);
         Scene scene = new Scene(menu, 700, 600);
         scene.getStylesheets().add(getClass().getResource("styles.css").toExternalForm());
         stage.setTitle("Direccion");

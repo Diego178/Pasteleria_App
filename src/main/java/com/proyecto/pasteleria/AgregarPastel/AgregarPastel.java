@@ -1,7 +1,6 @@
 package com.proyecto.pasteleria.AgregarPastel;
 
 import com.proyecto.pasteleria.Modelos.Pastel;
-import com.proyecto.pasteleria.Pedidos.TablaPedidos;
 import javafx.geometry.Pos;
 import javafx.scene.control.*;
 import javafx.scene.image.Image;
@@ -38,11 +37,51 @@ public class AgregarPastel extends GridPane {
     private ImageView imagenesPastel;
     private Stage stage1;
     private Button bAgregar;
-    public AgregarPastel(Stage stage, TablaPedidos tablaPasteles,Label total){
-        this.setStyle("-fx-background-color: #dfe6e9");
-
+    private Pastel pastel;
+    public AgregarPastel(Stage stage, TablaPasteles tablaPasteles){
         this.stage1=stage;
+        bAgregar=new Button("Agregar");
+        bAgregar.setOnAction(evtm->{
+            Pastel pastel=crearPastel();
+            tablaPasteles.agregarPastel(pastel);
+            stage.close();
+        });
+        inicializarComponentes(bAgregar);
+    }
+    public AgregarPastel(Stage stage,Pastel pastel){
+        this.pastel=pastel;
+        this.stage1=stage;
+        bAgregar=new Button("Agregar");
+        inicializarComponentes(bAgregar);
+        llenarFormulario(pastel);
+        bAgregar.setOnAction(evtm->{
+            //Pastel pastel=crearPastel();
+            //tablaPasteles.agregarPastel(pastel);
+            stage.close();
+        });
 
+    }
+    private void llenarFormulario(Pastel pastel) {
+        cbTamano.getSelectionModel().select(pastel.getTamano());
+    }
+
+    public AgregarPastel(Stage stage, TablaPasteles tablaPasteles, Label total){
+        this.stage1=stage;
+        bAgregar=new Button("Agregar");
+        bAgregar.setOnAction(evtm->{
+            Pastel pastel=crearPastel();
+            tablaPasteles.agregarPastel(pastel);
+            total.setText("Total: $"+tablaPasteles.total());
+            stage.close();
+        });
+        inicializarComponentes(bAgregar);
+
+
+
+    }
+
+    private void inicializarComponentes(Button bAgregar) {
+        this.setStyle("-fx-background-color: #dfe6e9");
         lTipo=new Label("Tipo de Pan: ");
         cbTipoPan=new ComboBox();
         crearListaTipoPan(cbTipoPan);
@@ -97,13 +136,6 @@ public class AgregarPastel extends GridPane {
 
         Precio=new Label("Precio del pastel: $"+precioPastel);
 
-        bAgregar=new Button("Agregar");
-        bAgregar.setOnAction(evtm->{
-            Pastel pastel=crearPastel();
-            tablaPasteles.agregarPastel(pastel);
-            total.setText("Total: "+tablaPasteles.total());
-            stage.close();
-        });
         //setPromptText
         this.add(lTipo,3,0);
         this.add(cbTipoPan,4,0);
@@ -128,8 +160,6 @@ public class AgregarPastel extends GridPane {
         setHgap(7);
         setVgap(7);
         setAlignment(Pos.CENTER);
-
-
     }
 
     private void accionCBTipoPan() {

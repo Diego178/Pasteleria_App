@@ -31,9 +31,11 @@ public class AgregarDireccion extends GridPane {
     private  int IDColonia;
     private Button agregar;
     private Direcciones direcciones;
-    public AgregarDireccion(Stage stage,Direcciones direcciones){
+    private int seleccion;
+    public AgregarDireccion(Stage stage,Direcciones direcciones,int seleccion){
         this.direcciones=direcciones;
         this.stage=stage;
+        this.seleccion=seleccion;
         setStyle("-fx-background-color: #dfe6e9");
         conexion=new ConexionDireccion();
         conexion.iniciarConexion();
@@ -101,7 +103,9 @@ public class AgregarDireccion extends GridPane {
         agregar=new Button("Agregar");
         agregar.setOnAction(evt->{
             Direccion direccion=crearDireccion();
-            direcciones.agregarDireccion(direccion);
+            direcciones.agregarDireccion(direccion,seleccion);
+            direcciones.mostrarDirecciones();
+            stage.close();
         });
         setHgap(7);
         setVgap(7);
@@ -215,13 +219,3 @@ public class AgregarDireccion extends GridPane {
 
 
 }
-//String selec=cbEstado.getValue();
-//        cbCiudad.getItems().clear();
-//        if(selec.equals("Veracruz")){
-//            cbCiudad.getItems().addAll("Perote","Xalapa","Molinos","Sierra de agua","Las Vigas",
-//                    "Pescados","Libertad");
-//        }
-//        if(selec.equals("Puebla")){
-//            cbCiudad.getItems().addAll("Alchichica","Libres");
-//        }
-//        return selec;

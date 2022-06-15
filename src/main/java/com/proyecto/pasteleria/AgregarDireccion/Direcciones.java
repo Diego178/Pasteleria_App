@@ -9,9 +9,14 @@ public class Direcciones {
     private List<Direccion> direcciones;
     public Direcciones(){
         direcciones = new ArrayList<>();
+        Direccion dir1=new Direccion();
+        Direccion dir2=new Direccion();
+        direcciones.add(dir1);
+        direcciones.add(dir2);
     }
-    public void agregarDireccion(Direccion direccion){
-        direcciones.add(direccion);
+    public void agregarDireccion(Direccion direccion,int select){
+        direcciones.set(select,direccion);
+
     }
     public void mostrarDirecciones(){
         System.out.println("//////////////");
