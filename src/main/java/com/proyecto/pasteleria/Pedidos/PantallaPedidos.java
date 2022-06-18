@@ -21,6 +21,7 @@ public class PantallaPedidos extends BorderPane {
     private Label titulo;
     private HBox barra;
     private GridPane formulario;
+    private GridPane gpDirecciones;
     private Button bAgregarPastel;
     private Button bAgregarDireccion1;
     private Button bAgregarDireccion2;
@@ -32,6 +33,8 @@ public class PantallaPedidos extends BorderPane {
     private Label lTelefonoCliente;
     private Label lNombreCliente;
     private Label lTotal;
+    private Label direccion1;
+    private Label direccion2;
     private TextField tTelefono;
     private TextField tNombre;
     private TablaPasteles tablaPasteles;
@@ -50,8 +53,9 @@ public class PantallaPedidos extends BorderPane {
         titulo.getStyleClass().add("label-titulo-Grande");
 
         pasteles= FXCollections.observableArrayList();
-        tablaPasteles=new TablaPasteles();;
+        tablaPasteles=new TablaPasteles(lTotal);
         TableView tablaPasteles1=tablaPasteles.getTablaPasteles();
+
 
         direcciones=new Direcciones();
 
@@ -61,19 +65,21 @@ public class PantallaPedidos extends BorderPane {
         bAgregarPastel.setOnAction(evt->{
             accionAgregarPastel();
         });
-
+        direccion1=new Label("");
         lAgregarDireccion1=new Label("Direccion del cliente:");
         bAgregarDireccion1=new Button("Direccion cliente");
         bAgregarDireccion1.getStyleClass().add("cssBoton");
         bAgregarDireccion1.setOnAction(evt->{
-            accionAgregarDireccion(0);
+            accionAgregarDireccion(0, direccion1);
 
         });
+
+        direccion2=new Label("");
         lAgregarDireccion2=new Label("Direccion de entrega:");
         bAgregarDireccion2=new Button("Direccion entrega");
         bAgregarDireccion2.getStyleClass().add("cssBoton");
         bAgregarDireccion2.setOnAction(evt->{
-            accionAgregarDireccion(1);
+            accionAgregarDireccion(1, direccion2);
         });
 
 
@@ -89,6 +95,12 @@ public class PantallaPedidos extends BorderPane {
 
         bRealizarPedido=new Button("Realizar pedido");
         bRealizarPedido.getStyleClass().add("cssBoton");
+        bRealizarPedido.setOnAction(evtm->{
+            if (comprobarCampos()){
+                pantallaPago(tablaPasteles.total());
+                enviarInformacion();
+            }
+        });
 
         lTotal=new Label("Total: $"+total);
         lTotal.getStyleClass().add("label-titulo-Grande");
@@ -108,6 +120,8 @@ public class PantallaPedidos extends BorderPane {
         formulario.add(tTelefono,1,5);
         formulario.add(lNombreCliente,1,6);
         formulario.add(tNombre,1,7);
+        formulario.add(direccion1,1,8,2,2);
+        formulario.add(direccion2,1,10,2,2);
 
         barra.setPrefHeight(80);
         barra.setSpacing(600);
@@ -121,9 +135,63 @@ public class PantallaPedidos extends BorderPane {
         setAlignment(titulo,Pos.CENTER);
     }
 
-    private void accionAgregarDireccion(int Nodireccion) {
+    private void enviarInformacion() {
+
+    }
+
+    private boolean comprobarCampos() {
+        String str="";
+        if(tablaPasteles.total()==0)
+            str+="* No existen pasteles agregados\n";
+        if(direccion1.getText().isEmpty())
+            str+="* No tiene direccion de cliente agregada\n";
+        if(direccion2.getText().isEmpty())
+            str+="* No tiene direccion de entrega agregada\n";
+        if(tTelefono.getText().isEmpty())
+            str+="* No se agrego un numero de telefono\n";
+        if(tTelefono.getLength()>10 || tTelefono.getLength()<10) {
+            str += "* Numero de telefono no valido\n";
+        }else {
+            char[] array= tTelefono.getText().toCharArray();
+            for(char letra : array){
+                if(!Character.isDigit(letra)){
+                    str+="* El numero contiene letras\n";
+                    break;
+                }
+            }
+        }
+        if(tNombre.getText().isEmpty())
+            str+="* No se agrego nombre de cliente\n";
+        if(str.isEmpty())
+            return true;
+        else
+            ventanaAlerta(str);
+        return false;
+    }
+
+    private void ventanaAlerta(String str) {
+        Alert alertasalir = new Alert(Alert.AlertType.ERROR);
+        alertasalir.setTitle("Error");
+        alertasalir.setContentText("Hay errores en los datos favor de corregir:\n"+str);
+        alertasalir.show();
+        alertasalir.setHeight(300);
+        alertasalir.setWidth(300);
+    }
+
+    private void pantallaPago(Integer total) {
         Stage stage=new Stage();
-        Pane menu = new AgregarDireccion(stage, direcciones,Nodireccion);
+        Pane menu = new PagarPedido(stage, total);
+        Scene scene = new Scene(menu, 400, 240);
+        scene.getStylesheets().add(getClass().getResource("styles.css").toExternalForm());
+        stage.setTitle("Pagar");
+        stage.setScene(scene);
+        stage.setResizable(false);
+        stage.show();
+    }
+
+    private void accionAgregarDireccion(int Nodireccion, Label direccion) {
+        Stage stage=new Stage();
+        Pane menu = new AgregarDireccion(stage, direcciones,Nodireccion, direccion);
         Scene scene = new Scene(menu, 700, 600);
         scene.getStylesheets().add(getClass().getResource("styles.css").toExternalForm());
         stage.setTitle("Direccion");

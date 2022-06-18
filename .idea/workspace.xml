@@ -5,28 +5,40 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4262c8d6-4ab3-4a67-9eef-ba091408d8c5" name="Changes" comment="First version">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/proyecto/pasteleria/PantallaAgregarPastel/PantallaAgregarPastel.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/proyecto/pasteleria/PantallaAgregarPastel/styles.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/proyecto/pasteleria/Venta/TablaVentas.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/proyecto/pasteleria/Conexion/Conexion.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/proyecto/pasteleria/Conexion/Pasteles.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/proyecto/pasteleria/Modelos/Pedido.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/proyecto/pasteleria/PantallaAgregarPastel/EditarPastel.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/proyecto/pasteleria/PantallaAgregarPastel/TablaPastelesEditar.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/proyecto/pasteleria/PantallaAgregarPastel/circulo.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/proyecto/pasteleria/PantallaAgregarPastel/cuadrado.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/proyecto/pasteleria/Pedidos/PagarPedido.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/proyecto/pasteleria/Venta/PantallaVenta.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/proyecto/pasteleria/Venta/VentanaPagar.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Pasteleria/com/proyecto/pasteleria/AgregarDireccion/AgregarDireccion.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Pasteleria/com/proyecto/pasteleria/AgregarDireccion/AgregarDireccion.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Pasteleria/com/proyecto/pasteleria/AgregarDireccion/Direcciones.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Pasteleria/com/proyecto/pasteleria/AgregarDireccion/Direcciones.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Pasteleria/com/proyecto/pasteleria/AgregarPastel/AgregarPastel$1$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Pasteleria/com/proyecto/pasteleria/AgregarPastel/AgregarPastel$1$1.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Pasteleria/com/proyecto/pasteleria/AgregarPastel/AgregarPastel$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Pasteleria/com/proyecto/pasteleria/AgregarPastel/AgregarPastel$1.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Pasteleria/com/proyecto/pasteleria/AgregarPastel/AgregarPastel.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Pasteleria/com/proyecto/pasteleria/AgregarPastel/AgregarPastel.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Pasteleria/com/proyecto/pasteleria/AgregarPastel/TablaPasteles.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Pasteleria/com/proyecto/pasteleria/AgregarPastel/TablaPasteles.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Pasteleria/com/proyecto/pasteleria/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Pasteleria/com/proyecto/pasteleria/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Pasteleria/com/proyecto/pasteleria/Modelos/Pastel.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Pasteleria/com/proyecto/pasteleria/Modelos/Pastel.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Pasteleria/com/proyecto/pasteleria/PantallaAgregarPastel/PantallaAgregarPastel.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Pasteleria/com/proyecto/pasteleria/PantallaAgregarPastel/PantallaAgregarPastel.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Pasteleria/com/proyecto/pasteleria/Pedidos/PantallaPedidos.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Pasteleria/com/proyecto/pasteleria/Pedidos/PantallaPedidos.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Pasteleria/com/proyecto/pasteleria/Pedidos/TablaPedidos.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Pasteleria/com/proyecto/pasteleria/Venta/TablaVentas.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Pasteleria/com/proyecto/pasteleria/Venta/TablaVentas.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Pasteleria/com/proyecto/pasteleria/Venta/Venta.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Pasteleria/com/proyecto/pasteleria/Venta/Venta.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Pasteleria/com/proyecto/pasteleria/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Pasteleria/com/proyecto/pasteleria/styles.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Pasteleria/module-info.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Pasteleria/module-info.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/proyecto/pasteleria/AgregarDireccion/AgregarDireccion.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/proyecto/pasteleria/AgregarDireccion/AgregarDireccion.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/proyecto/pasteleria/AgregarDireccion/Direcciones.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/proyecto/pasteleria/AgregarDireccion/Direcciones.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/proyecto/pasteleria/AgregarPastel/AgregarPastel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/proyecto/pasteleria/AgregarPastel/AgregarPastel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/proyecto/pasteleria/AgregarPastel/TablaPasteles.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/proyecto/pasteleria/AgregarPastel/TablaPasteles.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/proyecto/pasteleria/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/proyecto/pasteleria/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/proyecto/pasteleria/Modelos/Pastel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/proyecto/pasteleria/Modelos/Pastel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/proyecto/pasteleria/PantallaAgregarPastel/PantallaAgregarPastel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/proyecto/pasteleria/PantallaAgregarPastel/PantallaAgregarPastel.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/proyecto/pasteleria/Pedidos/PantallaPedidos.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/proyecto/pasteleria/Pedidos/PantallaPedidos.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/proyecto/pasteleria/Pedidos/TablaPedidos.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/proyecto/pasteleria/AgregarPastel/TablaPasteles.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/proyecto/pasteleria/Venta/Venta.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/proyecto/pasteleria/Venta/Venta.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/proyecto/pasteleria/Venta/TablaVentas.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/proyecto/pasteleria/Venta/TablaVentas.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/proyecto/pasteleria/Venta/Venta.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/proyecto/pasteleria/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/proyecto/pasteleria/styles.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/module-info.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -68,25 +80,25 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_ADD_EXTERNAL_FILES": "true",
-    "Downloaded.Files.Path.Enabled": "false",
-    "Repository.Attach.Annotations": "false",
-    "Repository.Attach.JavaDocs": "true",
-    "Repository.Attach.Sources": "false",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "jdk.selected.JAVA_MODULE": "openjdk-18",
-    "last_opened_file_path": "C:/Users/diego/IdeaProjects/Pasteleria/src/main/java/com/proyecto/pasteleria/PantallaAgregarPastel",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.42226312",
-    "settings.editor.selected.configurable": "org.jetbrains.plugins.github.ui.GithubSettingsConfigurable"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;Downloaded.Files.Path.Enabled&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.Annotations&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.JavaDocs&quot;: &quot;true&quot;,
+    &quot;Repository.Attach.Sources&quot;: &quot;false&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;openjdk-18&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/diego/IdeaProjects/Pasteleria/src/main/java/com/proyecto/pasteleria/PantallaAgregarPastel&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.42226312&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;org.jetbrains.plugins.github.ui.GithubSettingsConfigurable&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\diego\IdeaProjects\Pasteleria\src\main\java\com\proyecto\pasteleria\PantallaAgregarPastel" />
@@ -106,6 +118,7 @@
       <recent name="com.uv.menu" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.proyecto.pasteleria.Pedidos" />
       <recent name="com.proyecto.pasteleria.PantallaAgregarPastel" />
       <recent name="com.proyecto.pasteleria.AgregarPastel" />
     </key>
@@ -145,7 +158,8 @@
       <workItem from="1654401404696" duration="8327000" />
       <workItem from="1654554212789" duration="1199000" />
       <workItem from="1654719509401" duration="42403000" />
-      <workItem from="1655099220437" duration="33980000" />
+      <workItem from="1655099220437" duration="34347000" />
+      <workItem from="1655307738461" duration="35877000" />
     </task>
     <task id="LOCAL-00001" summary="First version">
       <created>1652590997365</created>
@@ -350,7 +364,21 @@
       <option name="project" value="LOCAL" />
       <updated>1655181867247</updated>
     </task>
-    <option name="localTasksCounter" value="30" />
+    <task id="LOCAL-00030" summary="First version">
+      <created>1655274331353</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1655274331353</updated>
+    </task>
+    <task id="LOCAL-00031" summary="First version">
+      <created>1655274346544</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1655274346544</updated>
+    </task>
+    <option name="localTasksCounter" value="32" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -371,6 +399,17 @@
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="First version" />
     <option name="LAST_COMMIT_MESSAGE" value="First version" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/proyecto/pasteleria/PantallaAgregarPastel/EditarPastel.java</url>
+          <line>58</line>
+          <option name="timeStamp" value="32" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/Pasteleria$Compilar.ic" NAME="Compilar Coverage Results" MODIFIED="1652825507796" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />

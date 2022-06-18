@@ -1,17 +1,20 @@
 package com.proyecto.pasteleria.Modelos;
 
+import javafx.scene.control.Button;
+
 public class Pastel {
-    private int id;
+    private String id;
     private String tipoPan;
     private String relleno;
     private String color;
     private String forma;
     private int pisos;
     private String tamano;
-    private int precio;
+    private Double precio;
     private String detalles;
+    private Button eliminar;
 
-    public Pastel(int id, String tipoPan, String relleno, String color, String forma, int pisos, String tamano, int precio, String detalles) {
+    public Pastel(String id, String tipoPan, String relleno, String color, String forma, int pisos, String tamano, Double precio, String detalles) {
         this.id = id;
         this.tipoPan = tipoPan;
         this.relleno = relleno;
@@ -23,11 +26,11 @@ public class Pastel {
         this.detalles = detalles;
     }
 
-    public int getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(String id) {
         this.id = id;
     }
 
@@ -79,11 +82,11 @@ public class Pastel {
         this.tamano = tamano;
     }
 
-    public int getPrecio() {
+    public Double getPrecio() {
         return precio;
     }
 
-    public void setPrecio(int precio) {
+    public void setPrecio(Double precio) {
         this.precio = precio;
     }
 

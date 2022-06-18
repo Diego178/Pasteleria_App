@@ -5,6 +5,7 @@ module com.proyecto.pasteleria {
     requires java.sql;
     requires javafx.graphics;
     requires javafx.base;
+    requires mysql.connector.java;
 
     /*requires org.controlsfx.controls;
     requires com.dlsc.formsfx;

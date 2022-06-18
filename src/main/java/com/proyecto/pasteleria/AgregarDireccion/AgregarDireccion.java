@@ -32,10 +32,12 @@ public class AgregarDireccion extends GridPane {
     private Button agregar;
     private Direcciones direcciones;
     private int seleccion;
-    public AgregarDireccion(Stage stage,Direcciones direcciones,int seleccion){
+    private Label lDireccion;
+    public AgregarDireccion(Stage stage,Direcciones direcciones,int seleccion, Label lDireccion){
         this.direcciones=direcciones;
         this.stage=stage;
         this.seleccion=seleccion;
+        this.lDireccion=lDireccion;
         setStyle("-fx-background-color: #dfe6e9");
         conexion=new ConexionDireccion();
         conexion.iniciarConexion();
@@ -105,6 +107,14 @@ public class AgregarDireccion extends GridPane {
             Direccion direccion=crearDireccion();
             direcciones.agregarDireccion(direccion,seleccion);
             direcciones.mostrarDirecciones();
+            if(seleccion==0){
+                lDireccion.setText("Direccion del cliente: "+cbEstado.getValue()+", "+cbCiudad.getValue()+", "+cbColonia.getValue()+
+                        ", \n"+tCalle.getText()+", "+tNoCasa.getText());
+            }
+            if(seleccion==1){
+                lDireccion.setText("Direccion de entrega: "+cbEstado.getValue()+", "+cbCiudad.getValue()+", "+cbColonia.getValue()+
+                        ", \n"+tCalle.getText()+", "+tNoCasa.getText());
+            }
             stage.close();
         });
         setHgap(7);

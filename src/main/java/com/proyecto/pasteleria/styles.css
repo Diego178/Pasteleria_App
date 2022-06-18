@@ -29,6 +29,60 @@
     -fx-background-color: #FFFFFF;
 }
 
+.BotonAceptar {
+       -fx-border-color: #34495e;
+       -fx-border-width: 2px;
+       -fx-background-color: #2ecc71;
+       -fx-font-size: 20px;
+       -fx-font-color: #2C3A47;
+       -fx-font-family: "Arial";
+       -fx-text-fill:black;
+       -fx-background-radius: 10 10 10 10;
+       -fx-border-radius: 10 10 10 10;
+   }
+.BotonAceptar:hover {
+    -fx-border-color: #34495e;
+    -fx-border-width: 3px;
+    -fx-background-color: #27ae60;
+    -fx-font-size: 20px;
+    -fx-font-color: #2c3e50;
+    -fx-font-family: "Arial";
+    -fx-background-radius: 10 10 10 10;
+    -fx-border-radius: 10 10 10 10;
+}
+
+.BotonAceptar:pressed {
+    -fx-text-fill:grey;
+    -fx-background-color: #2ecc71;
+}
+
+.BotonCancelar {
+    -fx-border-color: #34495e;
+    -fx-border-width: 2px;
+    -fx-background-color: #e74c3c;
+    -fx-font-size: 20px;
+    -fx-font-color: #2C3A47;
+    -fx-font-family: "Arial";
+    -fx-text-fill:black;
+    -fx-background-radius: 10 10 10 10;
+    -fx-border-radius: 10 10 10 10;
+}
+.BotonCancelar:hover {
+    -fx-border-color: #34495e;
+    -fx-border-width: 3px;
+    -fx-background-color: #c0392b;
+    -fx-font-size: 20px;
+    -fx-font-color: #2c3e50;
+    -fx-font-family: "Arial";
+    -fx-background-radius: 10 10 10 10;
+    -fx-border-radius: 10 10 10 10;
+}
+
+.BotonCancelar:pressed {
+    -fx-text-fill:grey;
+    -fx-background-color: #e74c3c;
+}
+
 .label {
     -fx-font-size: 20px;
     -fx-font-family: "Arial";

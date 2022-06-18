@@ -1,7 +1,6 @@
-package com.proyecto.pasteleria.AgregarPastel;
+package com.proyecto.pasteleria.PantallaAgregarPastel;
 
 import com.proyecto.pasteleria.Modelos.Pastel;
-import com.proyecto.pasteleria.PantallaAgregarPastel.TablaPastelesEditar;
 import javafx.geometry.Pos;
 import javafx.scene.control.*;
 import javafx.scene.image.Image;
@@ -13,7 +12,7 @@ import javafx.scene.shape.Rectangle;
 import javafx.stage.Stage;
 import javafx.util.Callback;
 
-public class AgregarPastel extends GridPane {
+public class EditarPastel extends GridPane {
     private Double precioPastel=0.0;
     private Double precioTamano=0.0;
     private Double precioTipoPan=0.0;
@@ -38,35 +37,86 @@ public class AgregarPastel extends GridPane {
     private Label lNoPisos;
     private ImageView imagenesPastel;
     private Stage stage1;
-    private Button bAgregar;
+    private Button bModificar;
     private Pastel pastel;
-    public AgregarPastel(Stage stage, TablaPastelesEditar tablaPasteles){
+
+    public EditarPastel(Stage stage, Pastel pastel, TablaPastelesEditar tablaPasteles, int seleccion){
+        this.pastel=pastel;
         this.stage1=stage;
-        bAgregar=new Button("Agregar");
-        bAgregar.setOnAction(evtm->{
-            Pastel pastel=crearPastel();
-            tablaPasteles.agregarPastel(pastel);
+        bModificar=new Button("Modificar");
+        inicializarComponentes(bModificar);
+        llenarFormulario(pastel);
+        precioPastel=pastel.getPrecio();
+        bModificar.setOnAction(evtm->{
+            Pastel pastel1=crearPastel();
+            tablaPasteles.agregarPastel(pastel1, seleccion);
             stage.close();
         });
-        inicializarComponentes(bAgregar);
-    }
-
-    public AgregarPastel(Stage stage, TablaPasteles tablaPasteles, Label total){
-        this.stage1=stage;
-        bAgregar=new Button("Agregar");
-        bAgregar.setOnAction(evtm->{
-            Pastel pastel=crearPastel();
-            tablaPasteles.agregarPastel(pastel);
-            total.setText("Total: $"+tablaPasteles.total());
-            stage.close();
-        });
-        inicializarComponentes(bAgregar);
-
-
 
     }
 
-    private void inicializarComponentes(Button bAgregar) {
+    private void llenarFormulario(Pastel pastel) {
+        cbTamano.getSelectionModel().select(pastel.getTamano());
+        cbRelleno.getSelectionModel().select(pastel.getRelleno());
+        cbForma.getSelectionModel().select(pastel.getForma());
+        cbNoPisos.getSelectionModel().select(pastel.getPisos()-1);
+        cbTipoPan.getSelectionModel().select(pastel.getTipoPan());
+        tDetalles.setText(pastel.getDetalles());
+        color.setValue(Color.web(pastel.getColor()));
+        inicializarPrecios();
+        Precio.setText("Precio: "+pastel.getPrecio());
+    }
+
+    private void inicializarPrecios() {
+        int seleccion1=cbTamano.getSelectionModel().getSelectedIndex();
+        if(seleccion1==0){
+            precioTamano=110.0;
+        }
+        if(seleccion1==1){
+            precioTamano=120.0;
+        }
+        if(seleccion1==2){
+            precioTamano=150.0;
+        }
+        int seleccion2=cbTipoPan.getSelectionModel().getSelectedIndex();
+        if(seleccion2==0){
+            precioTipoPan=100.0;
+        }
+        if(seleccion2==1){
+            precioTipoPan=120.0;
+        }
+        if(seleccion2==2){
+            precioTipoPan=150.0;
+        }
+        int seleccion3=cbRelleno.getSelectionModel().getSelectedIndex();
+        if(seleccion3==0){
+            precioRelleno=80.0;
+        }
+        if(seleccion3==1){
+            precioRelleno=50.0;
+        }
+        if(seleccion3==2){
+            precioRelleno=30.0;
+        }
+        int seleccion4=cbNoPisos.getSelectionModel().getSelectedIndex();
+        if(seleccion4==0){
+            precioRNoPisos=100.0;
+        }
+        if(seleccion4==1){
+            precioRNoPisos=150.0;
+        }
+        if(seleccion4==2){
+            precioRNoPisos=310.0;
+        }
+        if(seleccion4==3){
+            precioRNoPisos=450.0;
+        }
+        if(seleccion4==4){
+            precioRNoPisos=600.0;
+        }
+    }
+
+    private void inicializarComponentes(Button bModificar) {
         this.setStyle("-fx-background-color: #dfe6e9");
         lTipo=new Label("Tipo de Pan: ");
         cbTipoPan=new ComboBox();
@@ -113,6 +163,9 @@ public class AgregarPastel extends GridPane {
         cbTamano=new ComboBox();
         cbTamano.setPrefWidth(200);
         crearListaTamanos(cbTamano);
+        cbTamano.setOnAction(evt->{
+            accionCBTamano();
+        });
 
         lDetalles=new Label("Detalles del pastel: ");
         tDetalles=new TextArea();
@@ -138,14 +191,29 @@ public class AgregarPastel extends GridPane {
         this.add(lDetalles,3,12);
         this.add(tDetalles,4,12);
         this.add(Precio,3,15);
-        this.add(bAgregar,4,15);
-        bAgregar.getStyleClass().add("cssBoton");
-        bAgregar.setAlignment(Pos.BOTTOM_LEFT);
+        this.add(bModificar,4,15);
+        bModificar.getStyleClass().add("cssBoton");
+        bModificar.setAlignment(Pos.BOTTOM_LEFT);
 
 
         setHgap(7);
         setVgap(7);
         setAlignment(Pos.CENTER);
+    }
+
+    private void accionCBTamano() {
+        int seleccion=cbTamano.getSelectionModel().getSelectedIndex();
+        if(seleccion==0){
+            precioTamano=110.0;
+        }
+        if(seleccion==1){
+            precioTamano=120.0;
+        }
+        if(seleccion==2){
+            precioTamano=150.0;
+        }
+        precioPastel=precioTipoPan+precioForma+precioRelleno+precioRNoPisos+precioTamano;
+        Precio.setText("Precio del pastel: $"+precioPastel);
     }
 
     private void accionCBTipoPan() {
@@ -242,7 +310,6 @@ public class AgregarPastel extends GridPane {
         });
     }
 
-
     private void crearListaTipoPan(ComboBox cbTipoPan) {
         cbTipoPan.getItems().addAll("Chocolate","3 Leches","Moka");
     }
@@ -250,12 +317,13 @@ public class AgregarPastel extends GridPane {
     private void crearListaTamanos(ComboBox<String> cbTamano) {
         cbTamano.getItems().addAll("Chico","Mediano","Grande");
     }
+
     public Pastel crearPastel(){
         String forma;
         if(cbForma.getSelectionModel().getSelectedIndex()==0)
-            forma="cuadrado";
-        else
             forma="circulo";
+        else
+            forma="cuadrado";
         return new Pastel("1", cbTipoPan.getValue(), cbRelleno.getValue(), color.getValue().toString(), forma, cbNoPisos.getValue(), cbTamano.getValue(), precioPastel, tDetalles.getText());
 
     }
