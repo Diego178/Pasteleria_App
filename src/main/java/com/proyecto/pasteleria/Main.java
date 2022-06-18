@@ -13,7 +13,7 @@ public class Main extends Application {
         Pane root = new Login(stage);
         //Scene scene = new Scene(root, 900, 500);
         Pane menu = new PantallaVenta(stage);
-        Scene scene = new Scene(menu, 1000, 700);
+        Scene scene = new Scene(menu, 1400, 700);
         scene.getStylesheets().add(getClass().getResource("styles.css").toExternalForm());
         stage.setTitle("Login");
         stage.setScene(scene);
