@@ -5,6 +5,7 @@ import com.proyecto.pasteleria.Graficas.PantallaGraficas;
 import com.proyecto.pasteleria.Login.Login;
 import com.proyecto.pasteleria.PantallaAgregarPastel.PantallaAgregarPastel;
 import com.proyecto.pasteleria.Pedidos.PantallaPedidos;
+import com.proyecto.pasteleria.PedidosPendientes.PantallaPedidosPendientes;
 import com.proyecto.pasteleria.Venta.PantallaVenta;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
@@ -34,7 +35,7 @@ public class Menu extends BorderPane {
 
 //1
         Button butGrafica = new Button();
-        butGrafica.setOnAction(e -> {
+        butGrafica.setOnAction(evtm -> {
             crearVentanaGrafica();
         });
         Image igrafica = new Image(getClass().getResourceAsStream("Grafica.jpeg"));
@@ -46,7 +47,7 @@ public class Menu extends BorderPane {
 //2
 
         Button butVenta = new Button();
-        butVenta.setOnAction(e -> {
+        butVenta.setOnAction(evtm -> {
             crearVentanaVenta();
         });
         Image inuevaVenta = new Image(getClass().getResourceAsStream("Venta.jpeg"));
@@ -58,7 +59,7 @@ public class Menu extends BorderPane {
         lb2 = new Label("Generar venta");
 //3
         Button butPedido = new Button();
-        butPedido.setOnAction(e -> {
+        butPedido.setOnAction(evtm -> {
             crearVentanaPedido();
         });
         Image iagregarPedido = new Image(getClass().getResourceAsStream("AgregarPedido.jpeg"));
@@ -78,12 +79,12 @@ public class Menu extends BorderPane {
         butAgregar.setLayoutY(300);
         butAgregar.getStyleClass().add("cssBoton");
         lb4 = new Label("Agregar pasteles");
-        butAgregar.setOnAction(evt->{
+        butAgregar.setOnAction(evtm->{
             crearVentanaAgregarPastel();
         });
 //5
         Button butPendiente = new Button();
-        butPendiente.setOnAction(e -> {
+        butPendiente.setOnAction(evtm -> {
             System.out.println("OK clicked5.");
         });
         Image ipedidoPendiente = new Image(getClass().getResourceAsStream("PedidoPendiente.jpeg"));
@@ -95,12 +96,12 @@ public class Menu extends BorderPane {
         butPendiente.getStyleClass().add("cssBoton");
         lb5 = new Label("Pedidos pendientes");
 
-        butPendiente.setOnAction(evt->{
+        butPendiente.setOnAction(evtm->{
             crearVentanaPedidosPendientes();
         });
 //6
         Button butSalir = new Button();
-        butSalir.setOnAction(e -> {
+        butSalir.setOnAction(evt -> {
             stage.close();
         });
         Image isalir = new Image(getClass().getResourceAsStream("Salir.jpeg"));
@@ -153,7 +154,7 @@ public class Menu extends BorderPane {
 
     private void crearVentanaPedidosPendientes() {
         Stage stage = new Stage();
-        Pane menu = new PantallaAgregarPastel(stage);
+        Pane menu = new PantallaPedidosPendientes();
         Scene scene = new Scene(menu, 1050, 700);
         scene.getStylesheets().add(getClass().getResource("styles.css").toExternalForm());
         stage.setTitle("Pedidos pendientes");

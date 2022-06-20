@@ -13,13 +13,11 @@ import javafx.scene.chart.NumberAxis;
 import javafx.scene.chart.XYChart;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.control.TextField;
 import javafx.scene.control.ToolBar;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
-import javafx.scene.layout.Background;
-import javafx.scene.layout.BackgroundFill;
-import javafx.scene.layout.BorderPane;
-import javafx.scene.layout.CornerRadii;
+import javafx.scene.layout.*;
 import javafx.scene.paint.Color;
 import javafx.util.Duration;
 
@@ -157,6 +155,10 @@ public class PantallaGraficas extends BorderPane {
             crearGrafica2();
         });
 
+        opcion3.setOnAction(evt->{
+            crearCorteCaja();
+        });
+
         titulo = new Label("Graficas y corte de caja");
         titulo.getStyleClass().add("label-titulo");
 
@@ -184,6 +186,26 @@ public class PantallaGraficas extends BorderPane {
         setBackground(fondo);
         menuHamburguesa.getItems().addAll(botonHam,new Label(""), opcion1,opcion2,opcion3);
         setLeft(menuHamburguesa);
+    }
+
+    private void crearCorteCaja() {
+        Label Dinero = new Label("Dinero esperado en caja: $4500");
+        Label Caja = new Label("Dinero en caja: $");
+        TextField llenar = new TextField();
+        Button btn = new Button("Aceptar");
+        btn.getStyleClass().add("cssBoton");
+        llenar.setPromptText("Dinero en la caja");
+        GridPane pan = new GridPane();
+        pan.setAlignment(Pos.CENTER);
+        pan.setHgap(30);
+        pan.setVgap(30);
+        pan.add(Dinero,2,2);
+        pan.add(Caja,2,3);
+        pan.add(llenar,2,4);
+        pan.add(btn,2,5);
+
+
+        setCenter(pan);
     }
 
     private void crearGrafica2() {
