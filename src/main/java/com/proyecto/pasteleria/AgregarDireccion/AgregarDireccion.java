@@ -103,6 +103,7 @@ public class AgregarDireccion extends GridPane {
         });
 
         agregar=new Button("Agregar");
+        agregar.getStyleClass().add("cssBoton");
         agregar.setOnAction(evt->{
             Direccion direccion=crearDireccion();
             direcciones.agregarDireccion(direccion,seleccion);

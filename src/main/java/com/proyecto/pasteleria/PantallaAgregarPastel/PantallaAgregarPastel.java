@@ -37,8 +37,6 @@ public class PantallaAgregarPastel extends BorderPane {
         //tablaPasteles.agregarPasteles(listaHelper.getListaPasteles());
 
         tablaPasteles=new TablaPastelesEditar(listaHelper.getListaPasteles());
-        tablaPasteles.agregarPastel(new Pastel("1","sss","sfv","Red","awfcs",2,"ferc",200.0,"fw"));
-
 
         TableView tablaPasteles1=tablaPasteles.getTablaPasteles();
         tablaPasteles1.setPrefWidth(1000);

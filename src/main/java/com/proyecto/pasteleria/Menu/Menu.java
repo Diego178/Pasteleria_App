@@ -1,6 +1,11 @@
 package com.proyecto.pasteleria.Menu;
 
 import com.proyecto.pasteleria.AgregarPastel.AgregarPastel;
+import com.proyecto.pasteleria.Graficas.PantallaGraficas;
+import com.proyecto.pasteleria.Login.Login;
+import com.proyecto.pasteleria.PantallaAgregarPastel.PantallaAgregarPastel;
+import com.proyecto.pasteleria.Pedidos.PantallaPedidos;
+import com.proyecto.pasteleria.Venta.PantallaVenta;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
@@ -30,7 +35,7 @@ public class Menu extends BorderPane {
 //1
         Button butGrafica = new Button();
         butGrafica.setOnAction(e -> {
-            System.out.println("OK clicked1.");
+            crearVentanaGrafica();
         });
         Image igrafica = new Image(getClass().getResourceAsStream("Grafica.jpeg"));
         butGrafica.setGraphic(new ImageView(igrafica));
@@ -42,7 +47,7 @@ public class Menu extends BorderPane {
 
         Button butVenta = new Button();
         butVenta.setOnAction(e -> {
-            System.out.println("OK clicked2.");
+            crearVentanaVenta();
         });
         Image inuevaVenta = new Image(getClass().getResourceAsStream("Venta.jpeg"));
         butVenta.setGraphic(new ImageView(inuevaVenta));
@@ -50,11 +55,11 @@ public class Menu extends BorderPane {
         butVenta.setLayoutX(300);
         butVenta.setLayoutY(100);
         butVenta.getStyleClass().add("cssBoton");
-        lb2 = new Label("Ventas");
+        lb2 = new Label("Generar venta");
 //3
         Button butPedido = new Button();
         butPedido.setOnAction(e -> {
-            System.out.println("OK clicked3.");
+            crearVentanaPedido();
         });
         Image iagregarPedido = new Image(getClass().getResourceAsStream("AgregarPedido.jpeg"));
        butPedido.setGraphic(new ImageView(iagregarPedido));
@@ -64,25 +69,18 @@ public class Menu extends BorderPane {
         butPedido.getStyleClass().add("cssBoton");
         lb3 = new Label("Agregar pedido");
 //4
+
         Button butAgregar = new Button();
-        /*butAgregar.setOnAction(e -> {
-            Stage stage1 = new Stage();
-            Pane menu = new AgregarPastel(stage1,);
-            Scene scene = new Scene(menu, 700, 500);
-            scene.getStylesheets().add(getClass().getResource("boton1.css").toExternalForm());
-            stage1.setTitle("Agregar Pastel");
-            stage1.setScene(scene);
-            //stage.setResizable(false);
-            stage1.show();
-        });*/
         Image iagregarPastel = new Image(getClass().getResourceAsStream("AgregarPastel.jpeg"));
         butAgregar.setGraphic(new ImageView(iagregarPastel));
         butAgregar.setMaxSize(2,2);
-        //button1.setMinSize(5,5);
         butAgregar.setLayoutX(50);
         butAgregar.setLayoutY(300);
         butAgregar.getStyleClass().add("cssBoton");
         lb4 = new Label("Agregar pasteles");
+        butAgregar.setOnAction(evt->{
+            crearVentanaAgregarPastel();
+        });
 //5
         Button butPendiente = new Button();
         butPendiente.setOnAction(e -> {
@@ -96,13 +94,17 @@ public class Menu extends BorderPane {
         butPendiente.setLayoutY(300);
         butPendiente.getStyleClass().add("cssBoton");
         lb5 = new Label("Pedidos pendientes");
+
+        butPendiente.setOnAction(evt->{
+            crearVentanaPedidosPendientes();
+        });
 //6
         Button butSalir = new Button();
         butSalir.setOnAction(e -> {
             stage.close();
         });
         Image isalir = new Image(getClass().getResourceAsStream("Salir.jpeg"));
-       butSalir.setGraphic(new ImageView(isalir));
+        butSalir.setGraphic(new ImageView(isalir));
         butSalir.setMaxSize(5,5);
         //button6.setMinSize(5,5);
         butSalir.setLayoutX(620);
@@ -136,6 +138,61 @@ public class Menu extends BorderPane {
 
 
 
+    }
+
+    private void crearVentanaGrafica() {
+        Stage stage = new Stage();
+        Pane menu = new PantallaGraficas();
+        Scene scene = new Scene(menu, 1050, 700);
+        scene.getStylesheets().add(getClass().getResource("styles.css").toExternalForm());
+        stage.setTitle("Pedidos pendientes");
+        stage.setScene(scene);
+        stage.setResizable(false);
+        stage.show();
+    }
+
+    private void crearVentanaPedidosPendientes() {
+        Stage stage = new Stage();
+        Pane menu = new PantallaAgregarPastel(stage);
+        Scene scene = new Scene(menu, 1050, 700);
+        scene.getStylesheets().add(getClass().getResource("styles.css").toExternalForm());
+        stage.setTitle("Pedidos pendientes");
+        stage.setScene(scene);
+        stage.setResizable(false);
+        stage.show();
+    }
+
+    private void crearVentanaAgregarPastel() {
+        Stage stage = new Stage();
+        Pane menu = new PantallaAgregarPastel(stage);
+        Scene scene = new Scene(menu, 1000, 700);
+        scene.getStylesheets().add(getClass().getResource("styles.css").toExternalForm());
+        stage.setTitle("Agregar Pastel");
+        stage.setScene(scene);
+        stage.setResizable(false);
+        stage.show();
+    }
+
+    private void crearVentanaPedido() {
+        Stage stage = new Stage();
+        Pane menu = new PantallaPedidos();
+        Scene scene = new Scene(menu, 1200, 700);
+        scene.getStylesheets().add(getClass().getResource("styles.css").toExternalForm());
+        stage.setTitle("Pedido");
+        stage.setScene(scene);
+        stage.setResizable(false);
+        stage.show();
+    }
+
+    private void crearVentanaVenta() {
+        Stage stage = new Stage();
+        Pane menu = new PantallaVenta(stage);
+        Scene scene = new Scene(menu, 1250, 700);
+        scene.getStylesheets().add(getClass().getResource("styles.css").toExternalForm());
+        stage.setTitle("Login");
+        stage.setScene(scene);
+        stage.setResizable(false);
+        stage.show();
     }
 
 }

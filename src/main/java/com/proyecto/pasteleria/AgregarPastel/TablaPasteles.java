@@ -1,6 +1,5 @@
 package com.proyecto.pasteleria.AgregarPastel;
 
-import com.proyecto.pasteleria.Conexion.Conexion;
 import com.proyecto.pasteleria.Modelos.Pastel;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -10,7 +9,6 @@ import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;
 import javafx.util.Callback;
 
-import java.sql.Connection;
 import java.util.List;
 
 public class TablaPasteles {

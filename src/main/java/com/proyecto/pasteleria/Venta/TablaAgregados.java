@@ -4,10 +4,7 @@ import com.proyecto.pasteleria.Conexion.Pasteles;
 import com.proyecto.pasteleria.Modelos.Pastel;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
-import javafx.scene.control.Button;
-import javafx.scene.control.TableCell;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
+import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;
@@ -17,7 +14,9 @@ public class TablaAgregados {
     private TableView<Pastel> tablaAgregados = new TableView<>();
     private ObservableList<Pastel> pastelesAgregados = FXCollections.observableArrayList();
     private TablaInventario tablaInventario;
-    public TablaAgregados(){
+    private Label lTotal;
+    public TablaAgregados(Label lTotal){
+        this.lTotal=lTotal;
         tablaAgregados = new TableView<>();
         tablaAgregados.getStyleClass().add("table-cell");
         tablaAgregados.setPrefWidth(700);
@@ -51,6 +50,7 @@ public class TablaAgregados {
                         boton.setOnAction(evt->{
                             tablaInventario.setPastel(getTableView().getItems().get(getIndex()));
                             getTableView().getItems().remove(getIndex());
+                            lTotal.setText("Total: $"+getTotal());
                             //Pastel pastel = getTableView().getItems().get(getIndex());
                         });
                         boton.setPrefWidth(80);
@@ -116,5 +116,13 @@ public class TablaAgregados {
 
     public void setPastel(Pastel pastel){
         pastelesAgregados.add(pastel);
+    }
+
+    public Double getTotal(){
+        double total=0.0;
+        for(int i = 0; i < pastelesAgregados.size(); i++){
+            total+=pastelesAgregados.get(i).getPrecio();
+        }
+        return total;
     }
 }

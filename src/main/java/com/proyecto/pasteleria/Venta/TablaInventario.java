@@ -4,10 +4,7 @@ import com.proyecto.pasteleria.Conexion.Pasteles;
 import com.proyecto.pasteleria.Modelos.Pastel;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
-import javafx.scene.control.Button;
-import javafx.scene.control.TableCell;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
+import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;
@@ -17,7 +14,9 @@ public class TablaInventario {
     private TableView<Pastel> tablaInventario = new TableView<>();
     private ObservableList<Pastel> pastelesInventario = FXCollections.observableArrayList();
     private TablaAgregados tablaAgregados;
-    public TablaInventario(){
+    private Label lTotal;
+    public TablaInventario(Label lTotal){
+        this.lTotal=lTotal;
         Pasteles listaHelper = new Pasteles();
         listaHelper.crearLista();
         pastelesInventario.addAll(listaHelper.getListaPasteles());
@@ -56,6 +55,7 @@ public class TablaInventario {
                         boton.setOnAction(evt->{
                             tablaAgregados.setPastel(getTableView().getItems().get(getIndex()));
                             getTableView().getItems().remove(getIndex());
+                            lTotal.setText("Total: $"+tablaAgregados.getTotal());
                         });
                         boton.setPrefWidth(80);
                         boton.setPrefHeight(10);

@@ -7,17 +7,29 @@ public class Direccion {
     private String calle;
     private int numero;
     private String detalles;
+    private String tipo;
 
     public Direccion() {
     }
 
-    public Direccion(String estado, String ciudad, String colonia, String calle, int numero, String detalles) {
+    public Direccion(String estado, String ciudad, String colonia, String calle, int numero, String detalles, String tipo) {
         this.estado = estado;
         this.ciudad = ciudad;
         this.colonia = colonia;
         this.calle = calle;
         this.numero = numero;
         this.detalles = detalles;
+        this.tipo = tipo;
+    }
+
+    public Direccion(String estado, String ciudad, String colonia, String calle, int numero, String tipo) {
+        this.estado = estado;
+        this.ciudad = ciudad;
+        this.colonia = colonia;
+        this.calle = calle;
+        this.numero = numero;
+        this.tipo = tipo;
+
     }
 
     public String getEstado() {
@@ -66,5 +78,13 @@ public class Direccion {
 
     public void setDetalles(String detalles) {
         this.detalles = detalles;
+    }
+
+    public String getTipo() {
+        return tipo;
+    }
+
+    public void setTipo(String tipo) {
+        this.tipo = tipo;
     }
 }

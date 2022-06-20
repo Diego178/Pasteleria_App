@@ -24,10 +24,13 @@ public class PantallaVenta extends BorderPane {
     private Button bPagar;
     private HBox barra;
     public PantallaVenta(Stage stage) {
-        tablaAgregados = new TablaAgregados();
+        lTotal = new Label("Total: $");
+        lTotal.getStyleClass().add("label-titulo-Grande");
+
+        tablaAgregados = new TablaAgregados(lTotal);
         TableView<Pastel> tablaAgregados1 = tablaAgregados.getTablaAgregados();
-        tablaAgregados1.setPrefWidth(650);
-        tablaInventario = new TablaInventario();
+        tablaAgregados1.setPrefWidth(570);
+        tablaInventario = new TablaInventario(lTotal);
         TableView<Pastel> tablaInventario1 = tablaInventario.getTablaInventario();
         tablaInventario1.setPrefWidth(700);
 
@@ -53,11 +56,21 @@ public class PantallaVenta extends BorderPane {
 
         barra = new HBox();
 
-        lTotal = new Label("Total: $");
-        lTotal.getStyleClass().add("label-titulo-Grande");
-
         bPagar = new Button("Pagar");
         bPagar.getStyleClass().add("botonAzul");
+        bPagar.setOnAction(evtm->{
+            if(!tablaAgregados1.getItems().isEmpty()){
+                double total = tablaAgregados.getTotal();
+                crearPantallaVenta(total);
+            }else {
+                Alert alertasalir = new Alert(Alert.AlertType.ERROR);
+                alertasalir.setTitle("Error");
+                alertasalir.setContentText("No existen pasteles agregados");
+                alertasalir.show();
+                alertasalir.setHeight(200);
+                alertasalir.setWidth(300);
+            }
+        });
 
         titulo = new Label("Venta");
         titulo.getStyleClass().add("label-titulo-Grande");
@@ -79,12 +92,23 @@ public class PantallaVenta extends BorderPane {
 
     }
 
+    private void crearPantallaVenta(double total) {
+        Stage stage = new Stage();
+        Pane detalles = new PagarVenta(stage, total);
+        Scene scene = new Scene(detalles, 400, 240);
+        scene.getStylesheets().add(getClass().getResource("styles.css").toExternalForm());
+        stage.setTitle("Login");
+        stage.setScene(scene);
+        stage.setResizable(false);
+        stage.show();
+    }
+
     private void crearPantallaDetalles(int selectedIndex, Pastel pastel) {
         Stage stage = new Stage();
         Pane detalles = new PantallaDetalles(stage, pastel);
-        Scene scene = new Scene(detalles, 350, 450);
+        Scene scene = new Scene(detalles, 350, 400);
         scene.getStylesheets().add(getClass().getResource("styles.css").toExternalForm());
-        stage.setTitle("Login");
+        stage.setTitle("Detalles del pastel");
         stage.setScene(scene);
         stage.setResizable(false);
         stage.show();
